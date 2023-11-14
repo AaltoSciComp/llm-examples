@@ -4,4 +4,4 @@ This repository contains some examples of LLM deployments in Aalto University pr
 
 ## Ollama
 
-See [./ollama/README.md].
+See [this document](./ollama/README.md).
