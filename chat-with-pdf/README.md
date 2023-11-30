@@ -5,12 +5,9 @@ This is a demo of using a llama.cpp model and langchain to interact with pdf doc
 ### Set up the environment, run:
 
 ```sh
-conda env create -f env.yml -p ./myenv
+conda env create -f env.yaml -p ./myenv
 ```
-### Start an interactive srun job
-```sh
-srun --pty bash
-```
+
 ### Get model weights 
 ```sh
 # Choose the model that we want to use
@@ -24,7 +21,7 @@ echo $MODEL_WEIGHTS
 # Example output: /scratch/shareddata/LLMs_tools/models/llama2-llama.cpp-2023-08-28/llama-2-13b-chat/ggml-model-q4_1.gguf
 ```
 
-On whatever machine you're working, run the following command to start a interactive chat:
+Run the following command to start a chat with your document:
 ```sh
 python chat_with_pdf.py
 ```
