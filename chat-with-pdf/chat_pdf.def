@@ -1,0 +1,22 @@
+Bootstrap: docker
+From: nvidia/cuda:12.1.1-devel-ubuntu22.04
+
+%post
+    apt-get update && apt-get upgrade -y \
+    && apt-get install -y git build-essential libglib2.0-0 \
+    python3 python3-pip gcc wget \
+    ocl-icd-opencl-dev opencl-headers clinfo \
+    libclblast-dev libopenblas-dev \
+    && mkdir -p /etc/OpenCL/vendors && echo "libnvidia-opencl.so.1" > /etc/OpenCL/vendors/nvidia.icd
+
+    python3 -m pip install --upgrade pip pytest cmake scikit-build setuptools langchain sse-starlette pydantic-settings starlette-context torch pypdf faiss-cpu pdf2image pdfminer.six opencv-python-headless pandas unstructured unstructured[all-docs]
+
+    CMAKE_ARGS="-DLLAMA_CUBLAS=on" pip install llama-cpp-python
+
+%environment
+    export LLAMA_CUBLAS=1
+
+%files
+    # Copy local files to the container. 
+    # Replace '<local-path>' with your actual local directory path
+    <local_path> /
