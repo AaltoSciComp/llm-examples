@@ -26,3 +26,4 @@ Run the following command to start a chat with your document:
 python chat_with_pdf.py
 ```
 
+To close the chat interface, type the word 'exit'.
