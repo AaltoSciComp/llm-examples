@@ -90,7 +90,12 @@ def main(prompts: Union[str, List[str],],
         top_p=0.9,
         logprobs=False,
         echo=False)
-    print(tokenizer.decode(res[0]))
+
+    responses = tokenizer.decode(res[0])
+    print(responses)
+    prompts_responses = [ {'prompt': prompt, 'response': response } for prompt, response in zip(prompts, responses) ]
+    with open('responses.json', 'w') as file:
+        file.write(json.dumps(prompts_responses, indent=2))
 
 
 if __name__ == "__main__":
