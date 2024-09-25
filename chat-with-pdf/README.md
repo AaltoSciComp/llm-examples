@@ -2,10 +2,18 @@
 
 This is a demo of using a llama.cpp model and langchain to interact with pdf document on triton.
 
-### Set up the environment, run:
+### Create an environment for gpu supported llamacpp, run:
 
 ```sh
-conda env create -f env.yaml -p ./myenv
+module load mamba
+mamba env create -f env.yaml -p ./myenv
+```
+
+### Activate the environment, run:
+
+```sh
+module load mamba
+source activate ./myenv
 ```
 
 ### Get model weights 
