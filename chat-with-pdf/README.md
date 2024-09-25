@@ -7,6 +7,7 @@ This is a demo of using a llama.cpp model and langchain to interact with pdf doc
 ```sh
 conda env create -f env.yaml -p ./myenv
 ```
+NOTE: This environment is for CPU usage
 
 ### Get model weights 
 ```sh
