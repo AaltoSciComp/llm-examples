@@ -5,7 +5,8 @@ This example shows how to use llama2 for batch inference on triton.
 First set up the environment, run:
 
 ```sh
-conda env create -f env.yml -p ./llama2env
+module load mamba
+mamba env create -f env.yml -p ./llama2env
 ```
 
 This is the slurm [script](./batch_inference.sh) for sbatch run the inference.
@@ -27,7 +28,7 @@ This is the slurm [script](./batch_inference.sh) for sbatch run the inference.
   # Expect output: /scratch/shareddata/dldata/llama-2/tokenizer.model
   
   # activate conda environment
- module load miniconda
+ module load mamba
  source activate llama2env
 
   # run batch inference
