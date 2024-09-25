@@ -5,7 +5,9 @@ This is a demo of using a llama.cpp model and langchain to interact with pdf doc
 ### Set up the environment, run:
 
 ```sh
-conda env create -f env.yaml -p ./myenv
+module load mamba
+mamba env create -f env.yaml -p ./myenv
+source activate ./myenv
 ```
 NOTE: This environment is for CPU usage
 
