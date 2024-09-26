@@ -1,4 +1,4 @@
-#This Python script is designed to evaluate the embedding endpoints of aaltogput. Semantic similarity between pairs of sentences are calculated for sanity check.
+#This Python script is designed to evaluate the embedding endpoints of aalto llm API. Semantic similarity between pairs of sentences are calculated for sanity check.
 import requests
 from scipy.spatial.distance import cosine
 def get_embedding(sentence):
