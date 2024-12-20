@@ -29,7 +29,7 @@ This is the slurm [script](./batch_inference.sh) for sbatch run the inference.
   
   # activate conda environment
  module load mamba
- source activate llama2env
+ source activate llama2env/
 
   # run batch inference
  torchrun --nproc_per_node 1 batch_inference.py \
