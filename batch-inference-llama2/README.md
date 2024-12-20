@@ -16,7 +16,7 @@ This is the slurm [script](./batch_inference.sh) for sbatch run the inference.
  #SBATCH --time=00:25:00
  #SBATCH --cpus_per_task=4
  #SBATCH --mem=20GB
- #SBATCH --gres=gpu:1
+ #SBATCH --gpus=1
  #SBATCH --output=llama2inference-gpu.%J.out
  #SBATCH --error=llama2inference-gpu.%J.err
 
