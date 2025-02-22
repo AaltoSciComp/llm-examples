@@ -1,4 +1,8 @@
 #This Python script is designed to evaluate the embedding endpoints of aalto llm API. Semantic similarity between pairs of sentences are calculated for sanity check.
+import os
+from dotenv import load_dotenv
+load_dotenv()
+mykey = os.environ['MY_KEY']
 import requests
 from scipy.spatial.distance import cosine
 def get_embedding(sentence):
@@ -6,14 +10,29 @@ def get_embedding(sentence):
     headers = {
         'accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer your-api-key'
+        'Authorization': f'Bearer {mykey}'
     }
     data = {
         "model": "llama2-7b",
         "input": sentence
     }
-    response = requests.post(url, headers=headers, json=data)
-    return response.json()['data'][0]['embedding']
+    
+    try:
+        print(f"Sending request for sentence: {sentence}")
+        response = requests.post(url, headers=headers, json=data)
+        print(f"Response status: {response.status_code}")
+        
+        # Print more detailed error information for 500 errors
+        if response.status_code == 500:
+            print("Server returned 500 error. Details:")
+            print(f"Request headers: {headers}")
+            print(f"Request data: {data}")
+            print("Response text:", response.text[:8000] + "..." if len(response.text) > 8000 else response.text)
+        
+        return response.json()['data'][0]['embedding']
+    except Exception as e:
+        print(f"Error getting embedding: {e}")
+        return None
 
 # List of sentence pairs:
 # These pairs are mixed; some are similar in meaning (1 and 3) while others are quite different (2, 4, and 5).

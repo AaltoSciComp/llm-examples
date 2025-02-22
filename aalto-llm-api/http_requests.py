@@ -2,26 +2,21 @@
 ## Aalto LLMs API key: https://llm-gateway.k8s-test.cs.aalto.fi/keys/
 ## Available models: https://llm-gateway.k8s-test.cs.aalto.fi/v1/models
 
-## the key can be stored in the .env file and load this way: 
+## the key can be stored in a .env file and load this way: 
+import os
 from dotenv import load_dotenv
 load_dotenv()
 mykey = os.environ['MY_KEY']
-
-import os
-import sys
 import requests
 
 # Endpoint where the FastAPI server is listening
 url = 'https://llm-gateway.k8s-test.cs.aalto.fi/v1/chat/completions'
 
-print(mykey)
 headers = {
     'accept': 'application/json',
     'Content-Type': 'application/json',
     'Authorization': f'Bearer {mykey}'
     }
-
-print(headers)
 # Data to be sent to the server, modify the text as needed
 data = {
     "model" : "llama3-8b-q8-instruct",

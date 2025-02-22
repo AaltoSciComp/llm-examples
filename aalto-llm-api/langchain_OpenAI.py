@@ -3,11 +3,12 @@
 ## Available models: https://llm-gateway.k8s-test.cs.aalto.fi/v1/models
 
 ## the key can be stored in the .env file and load this way: 
+import os
 from dotenv import load_dotenv
 load_dotenv()
 my_key = os.getenv("MY_KEY")
 
-import os
+
 import sys
 from langchain.chat_models import ChatOpenAI
 
