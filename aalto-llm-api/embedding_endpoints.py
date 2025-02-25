@@ -1,5 +1,5 @@
-#This Python script is designed to evaluate the embedding endpoints of aalto llm API. Semantic similarity between pairs of sentences are calculated for sanity check.
-import os
+### The embedding endpoints are not yet available in the Aalto LLM API.
+"""
 from dotenv import load_dotenv
 load_dotenv()
 mykey = os.environ['MY_KEY']
@@ -51,3 +51,4 @@ for sent1, sent2 in sentence_pairs:
     similarity = 1 - cosine(embedding1, embedding2)
     print(f"Similarity between:\n'{sent1}'\nand\n'{sent2}'\nis: {similarity.item():.4f}")
 
+"""
