@@ -1,4 +1,4 @@
-To start a openai-compatible server via vllm for a local model (a model that is predownloaded to Triton), run:
+To start an openai-compatible server via vllm for a local model (a model that is predownloaded to Triton), run:
 
 ```bash
 module load mamba
