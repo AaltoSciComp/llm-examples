@@ -1,25 +1,24 @@
-## Aalto LLMs API doc: https://llm-gateway.k8s-test.cs.aalto.fi/docs#/
-## Aalto LLMs API key: https://llm-gateway.k8s-test.cs.aalto.fi/keys/
-## Available models: https://llm-gateway.k8s-test.cs.aalto.fi/v1/models
+## Aalto LLMs API doc: https://ai-gateway.k8s.aalto.fi/docs#/
+## Aalto LLMs API key: https://ai-gateway.k8s.aalto.fi/keys/
+## Available models: https://ai-gateway.k8s.aalto.fi/v1/models
 
-## the key can be stored in a .env file and load this way: 
+## the key can be stored in the .env file and load this way: 
 import os
 from dotenv import load_dotenv
-load_dotenv()
-mykey = os.environ['MY_KEY']
 import requests
+load_dotenv()
+my_key = os.getenv("MY_KEY")
 
-# Endpoint where the FastAPI server is listening
-url = 'https://llm-gateway.k8s-test.cs.aalto.fi/v1/chat/completions'
+url = "https://ai-gateway.k8s.aalto.fi/v1/chat/completions"
 
 headers = {
     'accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': f'Bearer {mykey}'
+    'Authorization': f'Bearer {my_key}'
     }
 # Data to be sent to the server, modify the text as needed
 data = {
-    "model" : "llama3-8b-q8-instruct",
+    "model" : "depseek-r1-distill-qwen-14b",
     "messages" : [
         {"role" : "system", "content" : "Your are an AI Assistant"},
         {"role" : "user" , "content" : "Tell me about triton."}
