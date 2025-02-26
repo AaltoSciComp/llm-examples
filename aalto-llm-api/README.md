@@ -6,3 +6,5 @@
 
 [Available models](https://ai-gateway.k8s.aalto.fi/v1/models)
 
+Note: you need to be in aalto network to use them.
+
