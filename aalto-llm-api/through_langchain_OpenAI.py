@@ -7,10 +7,9 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 my_key = os.getenv("MY_KEY")
+from langchain.chat_models import ChatOpenAI
 
 url = "https://ai-gateway.k8s.aalto.fi/v1"
-import sys
-from langchain.chat_models import ChatOpenAI
 
 llm = ChatOpenAI(
     openai_api_base=url,
