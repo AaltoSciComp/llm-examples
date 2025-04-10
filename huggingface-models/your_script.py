@@ -5,6 +5,7 @@ import torch
 model_id = "Qwen/Qwen2.5-14B-Instruct-1M"
 
 # ====== LOAD MODEL DIRECTLY ======
+
 print("=" * 20)
 print("Loading model directly")
 
@@ -39,6 +40,7 @@ response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 print("Response:", response)
 
 # ====== USE A PIPELINE AS A HIGH-LEVEL HELPER ======
+
 print("=" * 20)
 print("Using pipeline")
 
