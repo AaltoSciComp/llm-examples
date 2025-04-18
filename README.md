@@ -2,18 +2,18 @@
 
 This repository contains some examples of LLM deployments in Aalto University premises.
 
-## Ollama
+## Huggingface transformers
 
-See [this document](./ollama/README.md).
+See [this document](./huggingface-models/README.md).
 
-## GPT4All REST API
+## Server via vLLM
 
-See [this document](./gpt4all-api/README.md).
+See [this document](./server-via-vllm/README.md).
 
-## Batch inference with llama2
+## Batch inference via vLLM
 
-See [this document](./batch-inference-llama2/README.md).
+See [this document](./batch-inference-via-vllm/README.md).
 
-## Chat with your pdf via langchain
+## Chat with your pdf via langchain (RAG)
 
 See [this document](./chat-with-pdf/README.md).
