@@ -1,5 +1,7 @@
 # llama2-batch-inference
 
+> **NOTE**: This example is no longer maintained and has been deprecated.
+
 This example shows how to use llama2 for batch inference on triton.
 
 First set up the environment, run:
@@ -37,8 +39,7 @@ This is the slurm [script](./batch_inference.sh) for sbatch run the inference.
     --ckpt_dir $MODEL_ROOT \
     --tokenizer_path $TOKENIZER_PATH \
     --max_seq_len 512 --max_batch_size 16
-```
-**Note:**
+```**Note:**
 - The `--nproc_per_node` should be set to the [MP] value for the model you are using. Different models require different model-parallel (MP) values:
 
 |  Model | MP |
@@ -47,4 +48,5 @@ This is the slurm [script](./batch_inference.sh) for sbatch run the inference.
 | 13B    | 2  |
 | 70B    | 8  |
 - Adjust the `--max_seq_len` and `--max_batch_size` parameters according to the hardware.
+
 
