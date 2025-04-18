@@ -6,7 +6,7 @@ This repository contains some examples of LLM deployments in Aalto University pr
 
 ### Huggingface transformers
 
-See [this document](./huggingface-models/README.md).
+See [this document](./huggingface-models).
 
 ### Server via vLLM
 
