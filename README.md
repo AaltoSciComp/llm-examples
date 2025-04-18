@@ -10,16 +10,16 @@ See [this document](./huggingface-models).
 
 ### Server via vLLM
 
-See [this document](./server-via-vllm/README.md).
+See [this document](./server-via-vllm).
 
 ### Batch inference via vLLM
 
-See [this document](./batch-inference-via-vllm/README.md).
+See [this document](./batch-inference-via-vllm).
 
 ### Chat with your pdf via langchain (RAG)
 
-See [this document](./chat-with-pdf/README.md).
+See [this document](./chat-with-pdf).
 
 ## Use Aalto's open-source LLM API
 
-See [this document](./aalto-llm-api/README.md).
+See [this document](./aalto-llm-api).
