@@ -1,5 +1,5 @@
 # GPT4All
-
+> **NOTE**: This example is no longer maintained and has been deprecated.
 ## Pre-requisites
 
 This example uses [GPT4All](https://github.com/nomic-ai/gpt4all)
