@@ -1,4 +1,5 @@
 # Ollama
+> **NOTE**: This example is no longer maintained and has been deprecated.
 
 This example uses Ollama to deploy a model: https://ollama.ai/
 
