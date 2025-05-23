@@ -1,3 +1,4 @@
+## This script is adapted from https://github.com/vllm-project/vllm/tree/main/examples
 # SPDX-License-Identifier: Apache-2.0
 """
 This file demonstrates the example usage of guided decoding 
