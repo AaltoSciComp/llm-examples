@@ -8,10 +8,6 @@ This repository contains some examples of LLM deployments in Aalto University pr
 
 See [this document](./huggingface-models).
 
-### Server via vLLM
-
-See [this document](./server-via-vllm).
-
 ### Batch inference via vLLM
 
 See [this document](./batch-inference-via-vllm).
@@ -19,6 +15,10 @@ See [this document](./batch-inference-via-vllm).
 ### Chat with your pdf via langchain (RAG)
 
 See [this document](./chat-with-pdf).
+
+### Server via vLLM
+
+See [this document](./server-via-vllm).
 
 ## Use Aalto's open-source LLM API
 
