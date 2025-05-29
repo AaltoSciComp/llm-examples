@@ -11,7 +11,7 @@ print("Loading model directly")
 
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
-    torch_dtype=torch.bfloat16,
+    torch_dtype="auto",
     load_in_8bit=True,
     device_map="auto"
 )
@@ -58,7 +58,7 @@ pipe = pipeline(
     device_map="auto",
     max_new_tokens=512,
     model_kwargs={
-        "torch_dtype": torch.bfloat16,
+        "torch_dtype": "auto",
         "quantization_config": quantization_config,
     },
     temperature=0.1,

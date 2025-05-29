@@ -2,10 +2,10 @@
 #SBATCH --time=00:25:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=80GB
-#SBATCH --gpus=1             # Request 1 GPU
-#SBATCH --partition=gpu-h200-141g-short
-#SBATCH --output vllm-gpu.%J.out
-#SBATCH --error vllm-gpu.%J.err
+#SBATCH --gpus=1            
+#SBATCH --partition=gpu-a100-80g,gpu-h100-80g,gpu-h200-141g-short 
+#SBATCH --output vllm.out
+#SBATCH --error vllm.err
 
 # Set HF_HOME to /scratch/shareddata/dldata/huggingface-hub-cache
 module load model-huggingface/all
