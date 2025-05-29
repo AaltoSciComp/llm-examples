@@ -2,7 +2,7 @@
 
 This repository contains some examples of LLM deployments in Aalto University premises.
 
-## Use local models
+## Use local models on Triton
 
 ### Huggingface transformers
 
@@ -23,3 +23,5 @@ See [this document](./server-via-vllm).
 ## Use Aalto's open-source LLM API
 
 See [this document](./aalto-llm-api).
+
+
