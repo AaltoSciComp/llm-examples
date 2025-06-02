@@ -38,14 +38,13 @@ print(f"Input tokens: {model_inputs.input_ids[0].tolist()[:10]}... (showing firs
 
 # Generate response
 print("Generation parameters: max_new_tokens=512\n")
-with torch.no_grad():  # Save memory during inference
-    generated_ids = model.generate(
-        **model_inputs, 
-        max_new_tokens=512,
-        do_sample=True,        # Enable sampling for more creative responses
-        temperature=0.7,       # Control randomness
-        pad_token_id=tokenizer.eos_token_id  # Handle padding
-    )
+generated_ids = model.generate(
+    **model_inputs, 
+    max_new_tokens=512,
+    do_sample=True,        # Enable sampling for more creative responses
+    temperature=0.7,       # Control randomness
+    pad_token_id=tokenizer.eos_token_id  # Handle padding
+)
 
 # Extract only the new tokens (response)
 generated_ids = [

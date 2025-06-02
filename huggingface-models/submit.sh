@@ -4,8 +4,8 @@
 #SBATCH --mem=40GB
 #SBATCH --gpus=1             
 #SBATCH --partition=gpu-v100-32g #specify gpu partitions 
-#SBATCH --output hug.out
-#SBATCH --error hug.err
+#SBATCH --output hug_%J.out
+#SBATCH --error hug_%J.err
 
 # This will set HF_HOME to /scratch/shareddata/dldata/huggingface-hub-cache
 module load model-huggingface/all

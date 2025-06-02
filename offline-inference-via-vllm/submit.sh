@@ -4,8 +4,8 @@
 #SBATCH --mem=80GB
 #SBATCH --gpus=1            
 #SBATCH --partition=gpu-a100-80g,gpu-h100-80g,gpu-h200-141g-short 
-#SBATCH --output vllm.out
-#SBATCH --error vllm.err
+#SBATCH --output vllm_%J.out
+#SBATCH --error vllm_%J.err
 
 # Set HF_HOME to /scratch/shareddata/dldata/huggingface-hub-cache
 module load model-huggingface/all

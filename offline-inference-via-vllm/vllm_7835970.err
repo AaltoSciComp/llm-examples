@@ -1,0 +1,12 @@
+Loading safetensors checkpoint shards:   0% Completed | 0/8 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:05<00:37,  5.30s/it]
+Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:09<00:27,  4.55s/it]
+Loading safetensors checkpoint shards:  38% Completed | 3/8 [00:13<00:22,  4.51s/it]
+Loading safetensors checkpoint shards:  50% Completed | 4/8 [00:17<00:17,  4.25s/it]
+Loading safetensors checkpoint shards:  62% Completed | 5/8 [00:19<00:10,  3.48s/it]
+Loading safetensors checkpoint shards:  75% Completed | 6/8 [00:23<00:07,  3.56s/it]
+Loading safetensors checkpoint shards:  88% Completed | 7/8 [00:26<00:03,  3.41s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:32<00:00,  4.08s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [00:32<00:00,  4.01s/it]
+
+Processed prompts:   0%|          | 0/4 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts:  25%|██▌       | 1/4 [00:00<00:00,  4.22it/s, est. speed input: 109.67 toks/s, output: 33.74 toks/s]Processed prompts:  50%|█████     | 2/4 [00:01<00:01,  1.61it/s, est. speed input: 46.99 toks/s, output: 71.81 toks/s] Processed prompts:  75%|███████▌  | 3/4 [00:02<00:00,  1.01it/s, est. speed input: 32.60 toks/s, output: 101.33 toks/s]Processed prompts: 100%|██████████| 4/4 [00:05<00:00,  1.84s/it, est. speed input: 19.34 toks/s, output: 117.25 toks/s]Processed prompts: 100%|██████████| 4/4 [00:05<00:00,  1.42s/it, est. speed input: 19.34 toks/s, output: 117.25 toks/s]

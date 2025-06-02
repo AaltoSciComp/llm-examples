@@ -34,6 +34,9 @@ for prompt_content in prompts_list:
     )
     batch_texts.append(text)
 
+
+print(f"Formatted text: {repr(batch_texts[0])}\n")
+
 # generate outputs
 outputs = llm.generate(batch_texts, sampling_params)
 
