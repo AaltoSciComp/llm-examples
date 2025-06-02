@@ -17,4 +17,4 @@ module load scicomp-llm-env
 export TRANSFORMERS_OFFLINE=1
 export HF_HUB_OFFLINE=1
 
-python -u your_script.py
+python -u your_script.py 

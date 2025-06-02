@@ -7,13 +7,13 @@ model_id = "Qwen/Qwen2.5-14B-Instruct-1M"
 # ====== LOAD MODEL DIRECTLY ======
 
 print("=" * 20)
-print("Loading model directly")
+print("Loading model directly \n")
 
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
-    torch_dtype="auto",
-    load_in_8bit=True,
-    device_map="auto"
+    torch_dtype="auto",  # Automatically choose the best dtype
+    load_in_8bit=True,   # Reduce memory usage by ~50%
+    device_map="auto"    # Automatically distribute across available GPUs
 )
 tokenizer = AutoTokenizer.from_pretrained(model_id)
 
@@ -23,13 +23,31 @@ messages = [
     {"role": "system", "content": "You are a helpful assistant."},
     {"role": "user", "content": prompt}
 ]
+# Apply chat template
 text = tokenizer.apply_chat_template(
     messages,
-    tokenize=False,
-    add_generation_prompt=True
+    tokenize=False,           # Return string, not tokens
+    add_generation_prompt=True # Add prompt for model to continue, this is necessary for chat/instruct models
 )
+print(f"Formatted text: {repr(text)}\n")
+
+# Tokenize the input
 model_inputs = tokenizer([text], return_tensors="pt").to(model.device)
-generated_ids = model.generate(**model_inputs, max_new_tokens=512)
+print(f"Input shape: {model_inputs.input_ids.shape}\n")
+print(f"Input tokens: {model_inputs.input_ids[0].tolist()[:10]}... (showing first 10)\n")
+
+# Generate response
+print("Generation parameters: max_new_tokens=512\n")
+with torch.no_grad():  # Save memory during inference
+    generated_ids = model.generate(
+        **model_inputs, 
+        max_new_tokens=512,
+        do_sample=True,        # Enable sampling for more creative responses
+        temperature=0.7,       # Control randomness
+        pad_token_id=tokenizer.eos_token_id  # Handle padding
+    )
+
+# Extract only the new tokens (response)
 generated_ids = [
     output_ids[len(input_ids):] 
     for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)
@@ -37,7 +55,7 @@ generated_ids = [
 
 # Decode and print response
 response = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
-print("Response:", response)
+print("Response:", response, "\n")
 
 # ====== USE A PIPELINE AS A HIGH-LEVEL HELPER ======
 
@@ -70,4 +88,4 @@ messages = [
     {"role": "user", "content": "Who are you?"},
 ]
 pipe_response = pipe(messages)
-print("Response:", pipe_response)
+print("Response:", pipe_response, "\n")
