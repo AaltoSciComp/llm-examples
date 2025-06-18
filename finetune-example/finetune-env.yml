@@ -1,0 +1,27 @@
+
+name: fine-tune-env
+channels:
+  - nvidia
+  - conda-forge
+dependencies:
+  - gcc
+  - pip
+  - blobfile
+  - protobuf
+  - peft
+  - cmake
+  - sentencepiece
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu118
+    - tdqm
+    - ninja
+    - torch
+    - torchvision
+    - torchaudio
+    - accelerate
+    - transformers
+    - datasets
+    - deepspeed==0.15.4
+    - tiktoken
+    - bitsandbytes
+    - peft
