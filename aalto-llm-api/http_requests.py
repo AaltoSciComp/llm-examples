@@ -9,7 +9,7 @@ import requests
 load_dotenv()
 my_key = os.getenv("MY_KEY")
 
-url = "https://ai-gateway.k8s.aalto.fi/v1/chat/completions"
+url = "https://llm-gateway.k8s.aalto.fi/v1/chat/completions"
 
 headers = {
     'accept': 'application/json',
