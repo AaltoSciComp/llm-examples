@@ -4,7 +4,7 @@
 
 [Get Aalto LLMs API key](https://llm-gateway.k8s.aalto.fi/keys/)
 
-[Available models](https://llm-gateway.k8s.aalto.fi/v1/models)
+[Available models](https://llm-gateway.k8s.aalto.fi/api/v1/models)
 
 Note: you need to be in aalto network to use them.
 
