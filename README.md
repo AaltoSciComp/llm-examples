@@ -12,10 +12,6 @@ See [this document](./huggingface-models).
 
 See [this document](./batch-inference-via-vllm).
 
-### Chat with your pdf via langchain (RAG)
-
-See [this document](./chat-with-pdf).
-
 ### Server via vLLM
 
 See [this document](./server-via-vllm).
