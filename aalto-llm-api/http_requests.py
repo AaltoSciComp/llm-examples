@@ -1,6 +1,6 @@
-## Aalto LLMs API doc: https://ai-gateway.k8s.aalto.fi/docs#/
-## Aalto LLMs API key: https://ai-gateway.k8s.aalto.fi/keys/
-## Available models: https://ai-gateway.k8s.aalto.fi/v1/models
+## Aalto LLMs API doc: https://llm-gateway.k8s.aalto.fi/docs#/
+## Aalto LLMs API key: https://llm-gateway.k8s.aalto.fi/keys/
+## Available models: https://llm-gateway.aalto.fi/models
 
 ## the key can be stored in the .env file and load this way: 
 import os
@@ -9,7 +9,7 @@ import requests
 load_dotenv()
 my_key = os.getenv("MY_KEY")
 
-url = "https://llm-gateway.k8s.aalto.fi/v1/chat/completions"
+url = "https://llm-gateway.k8s.aalto.fi/api/v1/chat/completions"
 
 headers = {
     'accept': 'application/json',
@@ -18,7 +18,7 @@ headers = {
     }
 # Data to be sent to the server, modify the text as needed
 data = {
-    "model" : "depseek-r1-distill-qwen-14b",
+    "model" : "RedHatAI/gemma-4-31B-it-FP8-Dynamic",
     "messages" : [
         {"role" : "system", "content" : "Your are an AI Assistant"},
         {"role" : "user" , "content" : "Tell me about triton."}
@@ -34,3 +34,4 @@ if response.status_code == 200:
     print(response.json())
 else:
     print(f"Failed to generate text, status code: {response.status_code}")
+    print(response.text)
