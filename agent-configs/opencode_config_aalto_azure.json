@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "aalto/gpt-5-2025-08-07",
+  "permission": {
+    "edit": "ask",
+    "bash": "ask"
+  },
+  "provider": {
+    "aalto": {
+      "npm": "@ai-sdk/openai",
+      "name": "Aalto OpenAI API",
+      "options": {
+        "baseURL": "https://aalto-openai-apigw.azure-api.net/v1/openai",
+        "apiKey": "unused",
+        "headers": {
+          "Ocp-Apim-Subscription-Key": "{env:MY_AZURE_KEY}"
+        }
+      },
+      "models": {
+        "gpt-5-2025-08-07": {
+          "name": "GPT-5 (Aalto)"
+        }
+      }
+    }
+  }
+}
