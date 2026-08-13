@@ -20,4 +20,8 @@ See [this document](./server-via-vllm).
 
 See [this document](./aalto-llm-api).
 
+## Agent configurations
+
+See [this document](./agent-configs) for configuration examples for AI coding agents using Aalto's Azure and LLM Gateway endpoints.
+
 
