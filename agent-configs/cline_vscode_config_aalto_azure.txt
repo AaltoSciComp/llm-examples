@@ -1,0 +1,11 @@
+This is the example config for Cline VSCode. Cline expects a chat/completions API.
+
+Provider: OpenAI Compatible
+
+Base URL: https://aalto-openai-apigw.azure-api.net/v1/openai/deployments/gpt-4o-2024-11-20
+
+Model: gpt-4o-2024-11-20
+
+API Key: <your subscription key>
+
+Custom Header: Ocp-Apim-Subscription-Key: <your subscription key>

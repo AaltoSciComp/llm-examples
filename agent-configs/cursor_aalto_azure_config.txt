@@ -1,0 +1,10 @@
+
+This is an example config for cursor to use aalto azure OpenAI APIs.
+
+Base URL:
+https://aalto-openai-apigw.azure-api.net/v1/openai
+
+Deployment Name:
+gpt-5-2025-08-07
+
+API Key: <your subscription key>

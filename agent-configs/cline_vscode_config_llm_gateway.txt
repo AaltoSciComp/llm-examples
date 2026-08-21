@@ -1,0 +1,13 @@
+This is the example config for Cline VSCode using the Aalto LLM gateway. Cline expects a chat/completions API.
+
+Provider: OpenAI Compatible
+
+Base URL: https://llm-gateway.k8s.aalto.fi/api/v1
+
+Model: RedHatAI/gemma-4-31B-it-FP8-Dynamic
+
+API Key: <your AALTO_LLM_API_KEY>
+
+Custom Header: none
+
+Note: you need to be on the Aalto network to use the gateway.

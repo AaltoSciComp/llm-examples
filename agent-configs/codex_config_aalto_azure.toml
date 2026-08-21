@@ -1,0 +1,15 @@
+# Set MY_AZURE_KEY in your environment.
+model = "gpt-5-2025-08-07"
+model_provider = "aalto"
+
+# Read-only by default for safety on shared HPC.
+# Change to "on-request" if you want Codex to ask before each action,
+# or "never" for full auto (not recommended on shared infra).
+approval_policy = "on-request"
+disable_response_storage = true
+
+[model_providers.aalto]
+name = "Aalto OpenAI API"
+base_url = "https://aalto-openai-apigw.azure-api.net/v1/openai"
+wire_api = "responses"
+env_http_headers = { "Ocp-Apim-Subscription-Key" = "MY_AZURE_KEY" }
