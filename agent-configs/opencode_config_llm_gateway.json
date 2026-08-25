@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "ask"
+  },
+  "provider": {
+    "llm-gateway": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "llm-gateway",
+      "options": {
+        "baseURL": "https://llm-gateway.k8s.aalto.fi/api/v1"
+      },
+      "models": {
+        "Qwen/Qwen3.8-27B-FP8": {
+          "name": "Qwen/Qwen3.8-27B-FP8",
+          "limit": {
+            "context": 128000,
+            "output": 32000
+          }
+        }
+      }
+    }
+  }
+}
