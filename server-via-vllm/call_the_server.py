@@ -1,19 +1,19 @@
+"""OpenAI client for the in-job vLLM server. Env: LLM_API_URL, LLM_MODEL, LLM_API_KEY, MAX_OUTPUT_TOKENS"""
+
+import os
 from openai import OpenAI
 
-client = OpenAI(
-    base_url="http://gpu42:8000/v1", # replace with the real nodename
-    api_key="token-abc123",
-)
+QUESTIONS = [
+    "In one short paragraph, what is Aalto Triton?",
+    "What is the difference between a CPU and a GPU?",
+    "Explain Slurm in two sentences.",
+    "Write a one-line Python hello world.",
+    "What is vLLM used for?",
+]
 
-completion = client.chat.completions.create(
-    model="meta-llama/Meta-Llama-3-8B-Instruct",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Tell me about triton."}
-    ],
-    extra_body={
-        "chat_template": "<|system|>\n{system}\n<|user|>\n{user}\n<|assistant|>\n"
-    }
-)
+client = OpenAI(base_url=os.environ["LLM_API_URL"], api_key=os.environ.get("LLM_API_KEY", "local"))
+opts = dict(model=os.environ["LLM_MODEL"], max_tokens=int(os.environ.get("MAX_OUTPUT_TOKENS", "256")))
 
-print(completion.choices[0].message)
+for q in QUESTIONS:
+    r = client.chat.completions.create(messages=[{"role": "user", "content": q}], **opts)
+    print(f"Q: {q}\nA: {r.choices[0].message.content}\n")

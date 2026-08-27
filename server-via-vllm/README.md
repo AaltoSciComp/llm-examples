@@ -1,17 +1,15 @@
-To start an openai-compatible server on a gpu node via vllm with a local model (a model that is predownloaded to Triton), run
-```bash
-srun --time=02:00:00 --mem=80G --ntasks=1  --gres=gpu:1 --mail-type=BEGIN --mail-user=username@aalto.fi start-server.sh modelname
-```
+# Server via vLLM (Triton)
 
-Note: the modelname is the model identifier on huggingface.
-
-Then checkout the hostname via `squeue --me`
-
-Modify the scritp `call_the_server.py` to use the correct hostname and model name.
-
-Then run the script:
+Slurm job: start local vLLM → wait for `/v1/models` → run `call_the_server.py` → exit.
 
 ```bash
-module load scicomp-llm-env
-python call_the_server.py
+mkdir -p logs
+sbatch submit.sh
+
+tail -f logs/vllm-serve-<jobid>.out
 ```
+
+Models must already be in the shared HF cache
+([LLMs on Triton](https://scicomp.aalto.fi/triton/apps/llms/#huggingface-models)).
+Default is `Qwen/Qwen3.8-27B`. Swap the client script or `QUESTIONS` in
+`call_the_server.py` for your own workload; env vars are set in `submit.sh`.
