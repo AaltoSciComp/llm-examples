@@ -1,6 +1,6 @@
-# Server via vLLM (Triton)
+# Server via vLLM (on Triton)
 
-Slurm job: start local vLLM → wait for `/v1/models` → run `call_the_server.py` → exit.
+Slurm job: start local vLLM on a gpu node → wait for `/v1/models` → run `call_the_server.py` **in the job** → exit.
 
 ```bash
 mkdir -p logs
