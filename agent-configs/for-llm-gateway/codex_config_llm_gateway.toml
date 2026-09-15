@@ -1,0 +1,15 @@
+# Set AALTO_LLM_API_KEY in your environment.
+# model = "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8"
+model = "zai-org/GLM-5.3-Flash"
+model_provider = "aalto"
+
+# Read-only by default for safety on shared HPC.
+# Change to "on-request" if you want Codex to ask before each action,
+# or "never" for full auto (not recommended on shared infra).
+approval_policy = "on-request"
+
+[model_providers.aalto]
+name = "Aalto LLM Gateway"
+base_url = "https://llm-gateway.k8s.aalto.fi/api/v1"
+env_key = "AALTO_LLM_API_KEY"
+wire_api = "responses"
