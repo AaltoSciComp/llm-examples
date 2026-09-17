@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "triton-docs": {
+      "url": "https://docs.triton.aalto.fi/mcp/"
+    }
+  }
+}
