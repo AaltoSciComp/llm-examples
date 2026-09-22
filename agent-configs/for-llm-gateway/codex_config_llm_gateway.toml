@@ -1,6 +1,15 @@
-# Set AALTO_LLM_API_KEY in your environment.
-# model = "Qwen/Qwen3-30B-A3B-Instruct-2507-FP8"
+# 1. Save this file as ~/.codex/config.toml
+# 2. Also save ~/.codex/aalto-models.json, you can get it from https://github.com/AaltoSciComp/llm-examples/blob/main/agent-configs/for-llm-gateway/aalto-models.json
+# 3. Set AALTO_LLM_API_KEY in your environment.
+
+# This JSON file contains all the models available in the gateway.
+# It must exist in the same folder as config.toml.
+model_catalog_json = "aalto-models.json"
+
+# Select the model to use by default.
 model = "zai-org/GLM-5.3-Flash"
+# model = "RedHatAI/gemma-4-31B-it-FP8-Dynamic"
+# model = "Qwen/Qwen3.8-27B-FP8"
 model_provider = "aalto"
 
 # Read-only by default for safety on shared HPC.

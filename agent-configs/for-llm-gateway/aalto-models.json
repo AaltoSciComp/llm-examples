@@ -1,0 +1,73 @@
+{
+  "models": [
+    {
+      "slug": "zai-org/GLM-5.3-Flash",
+      "display_name": "GLM-5.3-Flash",
+      "name": "GLM-5.3-Flash",
+      "model": "zai-org/GLM-5.3-Flash",
+      "provider": "aalto",
+      "context_window": 1048576,
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 500000
+      },
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 0,
+      "base_instructions": "You are a helpful coding assistant.",
+      "supports_tools": true,
+      "supports_parallel_tool_calls": false,
+      "experimental_supported_tools": [],
+      "supports_reasoning_summaries": true,
+      "support_verbosity": false,
+      "supported_reasoning_levels": []
+    },
+    {
+      "slug": "RedHatAI/gemma-4-31B-it-FP8-Dynamich",
+      "display_name": "gemma-4-31B-it",
+      "name": "gemma-4-31B-it",
+      "model": "RedHatAI/gemma-4-31B-it-FP8-Dynamic",
+      "provider": "aalto",
+      "context_window": 32768,
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 32768
+      },
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 0,
+      "base_instructions": "You are a helpful coding assistant.",
+      "supports_tools": true,
+      "supports_parallel_tool_calls": false,
+      "experimental_supported_tools": [],
+      "supports_reasoning_summaries": true,
+      "support_verbosity": false,
+      "supported_reasoning_levels": []
+    },
+    {
+      "slug": "Qwen/Qwen3.8-27B-FP8",
+      "display_name": "Qwen3.8-27B",
+      "name": "gemma-4-31B-it",
+      "model": "Qwen/Qwen3.8-27B-FP8",
+      "provider": "aalto",
+      "context_window": 262144,
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 262144
+      },
+      "shell_type": "shell_command",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 0,
+      "base_instructions": "You are a helpful coding assistant.",
+      "supports_tools": true,
+      "supports_parallel_tool_calls": false,
+      "experimental_supported_tools": [],
+      "supports_reasoning_summaries": true,
+      "support_verbosity": false,
+      "supported_reasoning_levels": []
+    }
+  ]
+}
