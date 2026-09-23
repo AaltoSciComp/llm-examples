@@ -4,11 +4,19 @@ This folder contains example configs for several coding agents. Some files are m
 
 ### Codex
 
+#### Azure APIs:
 - `codex_config_aalto_azure.toml`: copy to `~/.codex/config.toml`
+
+Set the required environment variable before starting Codex:
+`MY_AZURE_KEY`
+
+#### LLM Gateway APIs:
+- `codex_config_llm_gateway.toml`: copy to `~/.codex/config.toml`
 - `aalto-models.json`: copy to `~/.codex/aalto-models.json`
 
 Set the required environment variable before starting Codex:
-`MY_AZURE_KEY` 
+`AALTO_LLM_API_KEY`
+
 
 
 ### Cline for VS Code
