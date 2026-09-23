@@ -3,16 +3,50 @@
   "permission": {
     "*": "ask"
   },
-  "provider": {
+  "providers": {
     "llm-gateway": {
-      "npm": "@ai-sdk/openai-compatible",
       "name": "llm-gateway",
-      "options": {
-        "baseURL": "https://llm-gateway.k8s.aalto.fi/api/v1"
+      "env": ["AALTO_LLM_API_KEY"],
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "https://llm-gateway.k8s.aalto.fi/api/v1",
+        "apiKey": "{env:AALTO_LLM_API_KEY}"
       },
       "models": {
+        "zai-org/GLM-5.3-Flash": {
+          "name": "GLM-5.3-Flash",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          },
+          "compatibility": {
+            "reasoningField": "reasoning_content"
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 65536
+          }
+        },
+        "RedHatAI/gemma-4-31B-it-FP8-Dynamic": {
+          "name": "gemma-4-31B-it",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
         "Qwen/Qwen3.8-27B-FP8": {
-          "name": "Qwen/Qwen3.8-27B-FP8",
+          "name": "Qwen3.8-27B",
+          "capabilities": {
+            "tools": true,
+            "input": ["text"],
+            "output": ["text"]
+          },
           "limit": {
             "context": 128000,
             "output": 32000
