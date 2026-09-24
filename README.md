@@ -29,8 +29,6 @@ See [this document](./agent-configs) for configuration examples for AI coding ag
 Task-workflow skills for AI coding agents on Triton live in a separate
 repository: [AaltoSciComp/triton-skills](https://github.com/AaltoSciComp/triton-skills).
 
-Short always-on rules live in [rules-examples](./rules-examples).
-
 ## SciComp Docs MCP
 
 See [this document](./triton-mcp) for connecting AI coding agents to the
