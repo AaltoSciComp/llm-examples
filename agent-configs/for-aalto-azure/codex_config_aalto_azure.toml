@@ -12,4 +12,4 @@ disable_response_storage = true
 name = "Aalto OpenAI API"
 base_url = "https://aalto-openai-apigw.azure-api.net/v1/openai"
 wire_api = "responses"
-env_http_headers = { "Ocp-Apim-Subscription-Key" = "MY_AZURE_KEY" }
+env_key = "MY_AZURE_KEY"
