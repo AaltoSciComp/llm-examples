@@ -25,7 +25,7 @@ PORT=$((8000 + SLURM_JOB_ID % 1000))
 
 vllm serve "$MODEL" --host 127.0.0.1 --port "$PORT" \
   --max-model-len "${MAX_MODEL_LEN:-32768}" --kv-cache-dtype fp8 --reasoning-parser qwen3 \
-  --gpu-memory-utilization 0.90 --max-num-seqs 1 &
+  --gpu-memory-utilization 0.90 --max-num-seqs "${MAX_NUM_SEQS:-8}" &
 trap "kill $! 2>/dev/null || true" EXIT
 until curl -sf "http://127.0.0.1:$PORT/v1/models" >/dev/null; do sleep 5; done
 
