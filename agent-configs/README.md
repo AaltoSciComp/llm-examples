@@ -2,6 +2,14 @@ This folder contains example configs for several coding agents. Some files are m
 
 ## File map
 
+### Claude Code
+To use the claude code with the gateway, you have to set the following environment variables:
+- `ANTHROPIC_BASE_URL="https://llm-gateway.k8s.aalto.fi/api"`
+- `ANTHROPIC_AUTH_TOKEN="<AALTO_LLM_API_KEY>"`
+- `ANTHROPIC_MODEL="<AALTO_LLM_MODEL>"`
+- `ANTHROPIC_SMALL_FAST_MODEL="<AALTO_LLM_MODEL>"`
+- `CLAUDE_CODE_MAX_CONTEXT_TOKENS=<CONTEXT_WINDOW_SIZE>`
+
 ### Codex
 
 #### Azure APIs:
